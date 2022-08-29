@@ -1,0 +1,10 @@
+1 - select customerName as Customer from customers where country='France';
+2 - select firstName as Nome, lastName as Sobrenome from Employees where lastName LIKE '%a%';
+3 - select DISTINCT extension FROM Employees;
+4 - select DISTINCT extension FROM Employees ORDER BY extension asc;
+7 - select Distinct officeCode from Employees;
+8 - select paymentDate from payments Order by paymentDate desc;
+9 - select amount from payments where amount between 20000 and 50000 order by amount asc;
+10 - select productName,productDescription, productVendor from Products where buyPrice > 80 AND productVendor not LIKE '%Classic%'
+select * from Orders where customerNumber IN(103,114,128) order by customerNumber
+select * from Orders where customerNumber not IN(103,114,128) order by customerNumber
