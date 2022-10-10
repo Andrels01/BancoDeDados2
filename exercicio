@@ -8,3 +8,20 @@
 10 - select productName,productDescription, productVendor from Products where buyPrice > 80 AND productVendor not LIKE '%Classic%'
 11 - select * from Orders where customerNumber IN(103,114,128) order by customerNumber
 12 - select * from Orders where customerNumber not IN(103,114,128) order by customerNumber
+
+TEMA 6
+update animal set cpf = (select cpf from responsavel where nome="reginildo") where nome = "peso pena";
+update animal set peso = 1 + peso;
+delete from classe WHERE descricao = 'suino';
+update responsavel set cidade = 'mesquita';
+update responsavel set cidade = 'são paulo' where nome='perolina';
+select an.nome, re.nome from animal an join responsavel re on an.cpf = re.cpf;
+SELECT nome, descricao FROM animal an JOIN classe c ON an.idClasse = c.idClasse order by nome;
+select re.nome, an.nome from responsavel re inner join animal an on an.cpf = re.cpf and re.cidade in('mesquita');
+select an.nome from animal an join classe c on an.idClasse = c.idClasse and c.descricao = "canino";
+select an.nome, an.peso from animal an join classe c on an.idClasse = c.idClasse and c.descricao = "felino";
+INSERT INTO `clientsdb`.`classe` (`idClasse`, `descricao`) VALUES ('12', 'suino');
+select c.descricao, a.nome from classe c join animal a on c.idClasse = a.idClasse; 
+insert into responsavel(cpf, nome, cidade) values (4000, "Lozilindo","São paulo");
+select r.nome, a.nome from responsavel r join animal a on r.cpf = a.cpf; 
+select a.nome, c.descricao from classe c join animal a on c.idClasse = a.idClasse and a.peso > 5.000; 
